@@ -6,7 +6,7 @@ class Day11 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("day 10"), backgroundColor: Colors.yellow),
+      appBar: AppBar(title: Text("Tugas 3 Flutter"), backgroundColor: Colors.yellow),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
@@ -96,3 +96,4 @@ class Day11 extends StatelessWidget {
     );
   }
 }
+
