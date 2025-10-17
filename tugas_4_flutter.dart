@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Test4 extends StatelessWidget {
-  const Test4({super.key});
+class Tugas4Flutter extends StatelessWidget {
+  const Tugas4Flutter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -129,3 +129,4 @@ class Test4 extends StatelessWidget {
     );
   }
 }
+
