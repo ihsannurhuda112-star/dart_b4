@@ -12,21 +12,21 @@ class _Tugas5State extends State<Tugas5> {
   bool showname = false;
   bool showfavorite = false;
   bool showdeskripsi = false;
-  String deskripsi = "kehidupan dan kematian ";
+  String deskripsi = " gatau mau nulis apa ";
   num counter = 0;
   bool showbox = false;
+  double counter1 = 0;
   @override
   Widget build(BuildContext context) {
-    print("Refresh nama");
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tampilkan Nama"),
+        title: Text("Tugas flutter 5"),
         backgroundColor: Colors.amberAccent,
       ),
       body: Column(
         children: [
           Container(color: Colors.blue),
-          showname ? Text("Nama $name") : Text("nama:hilang"),
+          showname ? Text("Nama $name") : Text(""),
           ElevatedButton(
             onPressed: () {
               setState(() {
@@ -45,9 +45,10 @@ class _Tugas5State extends State<Tugas5> {
                 });
               },
               icon: Icon(Icons.favorite),
-              color: showfavorite ? Colors.grey : Colors.red,
+              color: showfavorite ? Colors.red : Colors.grey,
             ),
           ),
+          Text(showfavorite ? "Disukai" : ""),
           Column(
             children: [
               showdeskripsi ? Text(" $deskripsi") : Text(""),
@@ -95,10 +96,47 @@ class _Tugas5State extends State<Tugas5> {
                       splashColor: Colors.red,
                       onTap: () {
                         debugPrint("kotak disentuh");
-                        setState(() {});
+                        setState(() {
+                          showbox = !showbox;
+                        });
                       },
+                      child: Container(
+                        width: double.infinity,
+                        height: 100,
+                        color: Colors.cyan,
+                        child: Center(
+                          child: Text(
+                            showbox ? "" : "ini teks",
+                            style: TextStyle(fontSize: 20),
+                            selectionColor: Colors.yellowAccent,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
+                  SizedBox(height: 100),
+                  GestureDetector(
+                    onLongPress: () {
+                      print("Tekan Lama");
+                      setState(() {
+                        counter1 += 3;
+                      });
+                    },
+                    onDoubleTap: () {
+                      print("Tekan dua kali");
+                      setState(() {
+                        counter1 += 2;
+                      });
+                    },
+                    onTap: () {
+                      print("Tekan sekali");
+                      setState(() {
+                        counter1++;
+                      });
+                    },
+                    child: Text("Ayo pencet aku"),
+                  ),
+                  Center(child: Text("umlah : $counter1")),
                 ],
               ),
             ],
